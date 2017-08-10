@@ -28,12 +28,19 @@
  #define closesocket(x) CloseSocket(x)
 #else
  #include <sys/socket.h>
+#if 0
  #include <sys/time.h>
+#else
+ #include <sys/wtime.h>
+#endif
  #include <netinet/in.h>
  #include <netdb.h>
  #include <unistd.h>
+ #include <sys/swap.h>
  #define SOCKET int
+#ifndef INVALID_SOCKET
  #define INVALID_SOCKET -1
+#endif
  #define closesocket(x) close(x)
 #endif
 
