@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <conio.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <math.h>
@@ -5,7 +7,7 @@
 #include "device.h"
 #include "sync.h"
 
-static double bass_get_row(void)
+static double bass_get_row(void *v)
 {
     printf("bass_get_row\n");
     return 0.0;
@@ -83,7 +85,6 @@ int main(int argc, char *argv[])
         float dist = sync_get_val(cam_dist, row);
 
         printf("rot:%f dist:%f\n", rot, dist);
-        }
     }
 
 #ifndef SYNC_PLAYER
