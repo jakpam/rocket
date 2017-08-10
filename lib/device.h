@@ -26,21 +26,23 @@
  #define INVALID_SOCKET -1
  #define select(n,r,w,e,t) WaitSelect(n,r,w,e,t,0)
  #define closesocket(x) CloseSocket(x)
-#else
+#elif defined(USE_WATTCP32)
  #include <sys/socket.h>
-#if 0
- #include <sys/time.h>
-#else
  #include <sys/wtime.h>
-#endif
  #include <netinet/in.h>
  #include <netdb.h>
  #include <unistd.h>
- #include <sys/swap.h>
  #define SOCKET int
-#ifndef INVALID_SOCKET
+ #define closesocket(x) close(x)
+ #include <sys/swap.h>
+#else
+ #include <sys/socket.h>
+ #include <sys/time.h>
+ #include <netinet/in.h>
+ #include <netdb.h>
+ #include <unistd.h>
+ #define SOCKET int
  #define INVALID_SOCKET -1
-#endif
  #define closesocket(x) close(x)
 #endif
 

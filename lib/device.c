@@ -48,7 +48,7 @@ static const char *sync_track_path(const char *base, const char *name)
 	temp[sizeof(temp) - 1] = '\0';
 	strncat(temp, "_", sizeof(temp) - strlen(temp) - 1);
 	strncat(temp, path_encode(name), sizeof(temp) - strlen(temp) - 1);
-	strncat(temp, ".track", sizeof(temp) - strlen(temp) - 1);
+	strncat(temp, ".trk", sizeof(temp) - strlen(temp) - 1);
 	return temp;
 }
 

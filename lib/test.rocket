@@ -1,0 +1,37 @@
+<sync rows="128">
+	<tracks>
+		<track name="a:a">
+			<key interpolation="1" value="0.5" row="0"/>
+			<key interpolation="0" value="0" row="4"/>
+			<key interpolation="1" value="0.5" row="16"/>
+			<key interpolation="0" value="0" row="20"/>
+		</track>
+		<track name="a:b">
+			<key interpolation="0" value="0" row="0"/>
+			<key interpolation="1" value="0.5" row="8"/>
+			<key interpolation="0" value="0" row="12"/>
+			<key interpolation="1" value="0.5" row="16"/>
+			<key interpolation="0" value="0" row="20"/>
+		</track>
+		<track name="a:c">
+			<key interpolation="0" value="0" row="0"/>
+			<key interpolation="1" value="0.5" row="16"/>
+			<key interpolation="0" value="0" row="20"/>
+		</track>
+		<track name="b:a">
+			<key interpolation="1" value="0" row="0"/>
+			<key interpolation="0" value="2" row="1"/>
+			<key interpolation="1" value="2" row="7"/>
+			<key interpolation="0" value="3" row="8"/>
+			<key interpolation="1" value="3" row="15"/>
+			<key interpolation="0" value="4.3" row="16"/>
+			<key interpolation="1" value="4" row="23"/>
+			<key interpolation="0" value="3" row="24"/>
+		</track>
+		<track name="b:b">
+			<key interpolation="1" value="10" row="0"/>
+			<key interpolation="0" value="3" row="15"/>
+		</track>
+	</tracks>
+	<bookmarks/>
+</sync>
