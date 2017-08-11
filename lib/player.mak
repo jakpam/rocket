@@ -13,6 +13,9 @@ test.obj: test.cpp
 player.exe: test.obj device.obj track.obj
 	wlink @objs.arg @libs.arg system pmodew name player.exe
 
+rockplay.lib: device.obj track.obj
+	wlib rockplay.lib +-device.obj +-track.obj
+
 all: player.exe device.obj track.obj test.obj
 
 clean: .SYMBOLIC
