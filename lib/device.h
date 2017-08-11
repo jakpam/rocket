@@ -28,13 +28,14 @@
  #define closesocket(x) CloseSocket(x)
 #elif defined(USE_WATTCP32)
  #include <sys/socket.h>
+ //#include <sys/select.h>
  #include <sys/wtime.h>
  #include <netinet/in.h>
  #include <netdb.h>
  #include <unistd.h>
  #define SOCKET int
- #define closesocket(x) close(x)
  #include <sys/swap.h>
+ #define select select_s
 #else
  #include <sys/socket.h>
  #include <sys/time.h>

@@ -1,3 +1,4 @@
+#include <dos.h>
 #include <conio.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -16,7 +17,7 @@ static const int rpb = 1; /* rows per beat */
 static const double row_rate = (double(bpm) / 60) * rpb;
 
 static double time = 0.0;
-static double time_inc = TIME_INC;
+static double time_inc = 0.0; //TIME_INC;
 
 static double bass_get_row(void *)
 {
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
         printf("out of memory?\n");
 
 #ifndef SYNC_PLAYER
-    if (sync_tcp_connect(rocket, "localhost", SYNC_DEFAULT_PORT))
+    if (sync_tcp_connect(rocket, "192.168.7.1", SYNC_DEFAULT_PORT))
         printf("failed to connect to host\n");
 #endif
 
@@ -99,7 +100,7 @@ int main(int argc, char *argv[])
                 sync_get_val(b_a, row),
                 sync_get_val(b_b, row));
 
-#if 0
+#if 1
         sleep(1);
 #endif
 

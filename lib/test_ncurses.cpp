@@ -13,7 +13,7 @@
 #define TIME_INC (1.0)
 #endif
 
-static const float bpm = 6.0f; /* beats per minute */
+static const float bpm = 60.0f; /* beats per minute */
 static const int rpb = 1; /* rows per beat */
 static const double row_rate = (double(bpm) / 60) * rpb;
 
@@ -91,6 +91,8 @@ int main(int argc, char *argv[])
     {
         double row = bass_get_row(NULL);
 
+        if (row >= 0x80) break;
+
 #ifndef SYNC_PLAYER
         if (sync_update(rocket, /*(int)floor(row)*/row, &bass_cb, NULL))
             sync_tcp_connect(rocket, "localhost", SYNC_DEFAULT_PORT);
@@ -104,10 +106,6 @@ int main(int argc, char *argv[])
         printw("b:a:%f b:b:%f\n",
                 sync_get_val(b_a, row),
                 sync_get_val(b_b, row));
-
-#if 1
-        sleep(1);
-#endif
 
         time += time_inc;
     }
